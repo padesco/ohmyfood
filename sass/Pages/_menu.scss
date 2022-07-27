@@ -1,0 +1,115 @@
+main {
+    height: 350px;
+    width: 100%;
+    & img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+}
+
+.menu {
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    padding: 30px 0 60px;
+    margin-top: -60px;
+    background: whitesmoke;
+    position: relative;
+    width: 100%;
+    &__restaurantName {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 35px 40px 22px;
+    }
+    &__desktopVersion {
+        @include desktop {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            width: 100%;
+            height: 280px;
+        }
+    }
+    &__list {
+        padding-bottom: 40px;
+        @include desktop {
+            width: 33%;
+        }
+        & h2 {
+            border-bottom: 3px solid lightseagreen;
+            width: 42px;
+            margin: 0 22px 15px 20px;
+        }
+        &__container {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-content: space-between;
+            height: 222px;
+            padding: 0 15px;
+            &__entrees__laNoteEnchantée {
+                height: 296px; /* hauteur différente pour les entrées la note enchantée sur la version mobile */
+            }
+        }
+    }
+}
+
+/* hauteur différente version desktop pour la note enchantée */
+.height-laNoteEnchantée {
+    @include desktop {
+        height: 340px;
+    }
+}
+
+/* Liste des plats et animation check */
+.menuElement {
+    display: flex;
+    cursor: pointer;
+    box-shadow: 0 0 10px #afafaf;
+    border-radius: 15px;
+    overflow: hidden;
+    background: white;
+    width: 100%;
+    height: 60px;
+    &__description {
+        width: 100%;
+        padding: 10px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        border: 1px solid black;
+    }
+    &__price {
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+        padding: 10px;
+    }
+    &__check {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 70px;
+        background: $color-tertiary;
+        color: white;
+        zoom: 150%;
+        transform: translateX(60px);
+        transition: transform 500ms;
+        & .fa-circle-check {
+            transform: rotate(-180deg);
+            transition: transform 500ms;
+        }
+    }
+}
+.menuElement:hover {
+    & > .menuElement__price {
+    }
+    & > .menuElement__check {
+        transform: translateX(0);
+        & .fa-circle-check {
+            transform: rotate(0deg);
+        }
+    }
+}
