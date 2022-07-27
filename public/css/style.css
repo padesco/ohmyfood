@@ -361,47 +361,58 @@ main img {
 
 /* Liste des plats et animation check */
 .menuElement {
-  display: flex;
+  display: inline-flex;
   cursor: pointer;
   box-shadow: 0 0 10px #afafaf;
   border-radius: 15px;
   overflow: hidden;
   background: white;
   width: 100%;
-  height: 60px;
 }
 .menuElement__description {
   width: 100%;
   padding: 10px;
-  white-space: nowrap;
   overflow: hidden;
+}
+.menuElement__description p, .menuElement__description h3 {
+  white-space: nowrap;
   text-overflow: ellipsis;
-  border: 1px solid black;
+  overflow: hidden;
 }
 .menuElement__price {
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
   padding: 10px;
+  margin-inline-end: 20px;
+  border: 1px solid black;
+  transform: translateX(0);
+  transition-duration: 1000ms;
 }
 .menuElement__check {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 70px;
+  width: 60px;
+  margin-right: -55px;
   background: #99E2D0;
   color: white;
   zoom: 150%;
-  transform: translateX(60px);
-  transition: transform 500ms;
+  transform: translateX(0);
+  transition-duration: 1000ms;
 }
 .menuElement__check .fa-circle-check {
-  transform: rotate(-180deg);
-  transition: transform 500ms;
+  transform: rotate(-360deg);
+  transition: transform 1000ms;
 }
 
+.menuElement:hover > .menuElement__price {
+  transform: translateX(-54px);
+  animation-duration: 1000ms;
+}
 .menuElement:hover > .menuElement__check {
-  transform: translateX(0);
+  transform: translateX(-54px);
+  animation-duration: 1000ms;
 }
 .menuElement:hover > .menuElement__check .fa-circle-check {
   transform: rotate(0deg);
