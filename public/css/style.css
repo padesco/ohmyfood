@@ -379,6 +379,8 @@ main img {
   padding: 10px;
   overflow: hidden;
   white-space: nowrap;
+  margin-right: 0;
+  transition-duration: 1000ms;
 }
 .menuElement__description p, .menuElement__description h3 {
   text-overflow: ellipsis;
@@ -418,7 +420,7 @@ main img {
   transition-duration: 1000ms;
 }
 .menuElement:hover > .menuElement__price {
-  transform: translateX(-55px);
+  transform: translateX(-54px);
   animation-duration: 1000ms;
 }
 .menuElement:hover > .menuElement__check {
