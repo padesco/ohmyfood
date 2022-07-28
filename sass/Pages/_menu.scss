@@ -65,19 +65,20 @@ main {
 
 /* Liste des plats et animation check */
 .menuElement {
-    display: inline-flex;
+    display: flex;
     cursor: pointer;
     box-shadow: 0 0 10px #afafaf;
     border-radius: 15px;
     overflow: hidden;
     background: white;
     width: 100%;
+    position: relative;
     &__description {
         width: 100%;
         padding: 10px;
         overflow: hidden;
-        & p, h3 {
-            white-space: nowrap;
+        white-space: nowrap;
+        & p, & h3 {
             text-overflow: ellipsis;
             overflow: hidden;
         }
@@ -88,7 +89,7 @@ main {
         align-items: flex-end;
         padding: 10px;
         margin-inline-end: 20px;
-        border: 1px solid black;
+        background: white;
         transform: translateX(0);
         transition-duration: 1000ms;
     }
@@ -110,8 +111,14 @@ main {
     }
 }
 .menuElement:hover {
+    & .menuElement__description {
+        text-overflow: ellipsis;
+        overflow: hidden;
+        margin-right: 50px;
+        transition-duration: 1000ms;
+    }
     & > .menuElement__price {
-        transform: translateX(-54px);
+        transform: translateX(-55px);
         animation-duration: 1000ms;
     }
     & > .menuElement__check {
