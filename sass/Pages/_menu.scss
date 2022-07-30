@@ -79,7 +79,7 @@ main {
         overflow: hidden;
         white-space: nowrap;
         margin-right: 0;
-        transition-duration: 1000ms;
+        transition-duration: 500ms;
         & p, & h3 {
             text-overflow: ellipsis;
             overflow: hidden;
@@ -93,7 +93,7 @@ main {
         margin-inline-end: 20px;
         background: white;
         transform: translateX(0);
-        transition-duration: 1000ms;
+        transition-duration: 500ms;
     }
     &__check {
         display: flex;
@@ -105,10 +105,10 @@ main {
         color: white;
         zoom: 150%;
         transform: translateX(0);
-        transition-duration: 1000ms;
+        transition-duration: 500ms;
         & .fa-circle-check {
             transform: rotate(-360deg);
-            transition: transform 1000ms;
+            transition: transform 500ms;
         }
     }
 }
@@ -117,15 +117,15 @@ main {
         text-overflow: ellipsis;
         overflow: hidden;
         margin-right: 50px;
-        transition-duration: 1000ms;
+        transition-duration: 500ms;
     }
     & > .menuElement__price {
         transform: translateX(-54px);
-        animation-duration: 1000ms;
+        animation-duration: 500ms;
     }
     & > .menuElement__check {
         transform: translateX(-54px);
-        animation-duration: 1000ms;
+        animation-duration: 500ms;
         & .fa-circle-check {
             transform: rotate(0deg);
         }

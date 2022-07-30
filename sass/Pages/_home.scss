@@ -147,27 +147,39 @@
         border-radius: 2px;
     }
 }
+
 .element__title {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    width: 90%;
-    height: 50px;
-    background-color: white;
-    padding: 10px;
-    & h3 {
-        margin-bottom: 2px;
-    }
+    justify-content: space-between;
+    padding: 10px 15px;
     & i {
-        width: 35px;
-        height: 35px;
         display: flex;
         justify-content: center;
         align-items: center;
-        & .fa-thin {
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(175deg, $color-primary, $color-secondary);
-        }
+        padding: 1px;
+    }
+}
+
+/*animation des coeurs page d'accueil*/
+.fa-heart {
+    zoom: 180%;
+    display: block;
+    text-align: center;
+    cursor: pointer;
+    &::after {
+        background: linear-gradient(175deg, $color-primary, $color-secondary);
+        content: "\f004";
+        font-family: FontAwesome;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        -moz-background-clip: text;
+        -moz-text-fill-color: transparent;
+        opacity: 0;
+        transition: opacity 500ms;
+        margin-left: -16px;
+    }
+    &:hover::after {
+        opacity: 1;
     }
 }
