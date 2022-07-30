@@ -1,4 +1,24 @@
 @charset "UTF-8";
+@keyframes menu-appear {
+  0% {
+    transform: translateY(15px);
+    opacity: 0;
+  }
+  10% {
+    transform: translateY(13px);
+    opacity: 0.1;
+  }
+  22% {
+    transform: translateY(10px);
+    opacity: 0.4;
+  }
+  85%, 100% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
 .hidden {
   display: none;
 }
@@ -280,7 +300,6 @@ footer a {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 1px;
 }
 
 /*animation des coeurs page d'accueil*/
@@ -291,6 +310,7 @@ footer a {
   cursor: pointer;
 }
 .fa-heart::after {
+  zoom: 101%;
   background: linear-gradient(175deg, #9356DC, #FF79DA);
   content: "\f004";
   font-family: FontAwesome;
@@ -299,11 +319,15 @@ footer a {
   -moz-background-clip: text;
   -moz-text-fill-color: transparent;
   opacity: 0;
-  transition: opacity 500ms;
-  margin-left: -16px;
+  transform: scale(0);
+  transition: all 500ms ease-out;
+  transform-origin: bottom;
+  margin-left: -15.83px;
+  margin-bottom: -0.2px;
 }
 .fa-heart:hover::after {
   opacity: 1;
+  transform: scale(1);
 }
 
 main {
@@ -330,6 +354,11 @@ main img {
   align-items: center;
   justify-content: space-between;
   padding: 0 35px 40px 22px;
+}
+.menu__restaurantName i {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 @media screen and (min-width: 992px) {
   .menu__desktopVersion {
@@ -416,6 +445,7 @@ main img {
   background: #99E2D0;
   color: white;
   zoom: 150%;
+  opacity: 0;
   transform: translateX(0);
   transition-duration: 500ms;
 }
@@ -427,19 +457,33 @@ main img {
 .menuElement:hover .menuElement__description {
   text-overflow: ellipsis;
   overflow: hidden;
-  margin-right: 50px;
+  margin-right: 74px;
   transition-duration: 500ms;
 }
 .menuElement:hover > .menuElement__price {
-  transform: translateX(-54px);
+  transform: translateX(-74px);
   animation-duration: 500ms;
 }
 .menuElement:hover > .menuElement__check {
+  opacity: 1;
   transform: translateX(-54px);
   animation-duration: 500ms;
 }
 .menuElement:hover > .menuElement__check .fa-circle-check {
   transform: rotate(0deg);
+}
+
+/* animation apparition progressive */
+.menuElement:nth-child(1) {
+  animation: menu-appear 1000ms;
+}
+
+.menuElement:nth-child(2) {
+  animation: menu-appear 1000ms 100ms;
+}
+
+.menuElement:nth-child(3) {
+  animation: menu-appear 1000ms 200ms;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -21,6 +21,11 @@ main {
         align-items: center;
         justify-content: space-between;
         padding: 0 35px 40px 22px;
+        & i {
+            display: flex;
+            justify-content: center;
+            align-items: center; 
+        }
     }
     &__desktopVersion {
         @include desktop {
@@ -104,6 +109,7 @@ main {
         background: $color-tertiary;
         color: white;
         zoom: 150%;
+        opacity: 0;
         transform: translateX(0);
         transition-duration: 500ms;
         & .fa-circle-check {
@@ -116,18 +122,30 @@ main {
     & .menuElement__description {
         text-overflow: ellipsis;
         overflow: hidden;
-        margin-right: 50px;
+        margin-right: 74px;
         transition-duration: 500ms;
     }
     & > .menuElement__price {
-        transform: translateX(-54px);
+        transform: translateX(-74px);
         animation-duration: 500ms;
     }
     & > .menuElement__check {
+        opacity: 1;
         transform: translateX(-54px);
         animation-duration: 500ms;
         & .fa-circle-check {
             transform: rotate(0deg);
         }
     }
+}
+
+/* animation apparition progressive */
+.menuElement:nth-child(1) {
+    animation: menu-appear 1000ms;
+}
+.menuElement:nth-child(2) {
+    animation: menu-appear 1000ms 100ms;
+}
+.menuElement:nth-child(3) {
+    animation: menu-appear 1000ms 200ms;
 }

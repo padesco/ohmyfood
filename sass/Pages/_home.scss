@@ -156,8 +156,7 @@
     & i {
         display: flex;
         justify-content: center;
-        align-items: center;
-        padding: 1px;
+        align-items: center; 
     }
 }
 
@@ -168,6 +167,7 @@
     text-align: center;
     cursor: pointer;
     &::after {
+        zoom: 101%;
         background: linear-gradient(175deg, $color-primary, $color-secondary);
         content: "\f004";
         font-family: FontAwesome;
@@ -176,10 +176,14 @@
         -moz-background-clip: text;
         -moz-text-fill-color: transparent;
         opacity: 0;
-        transition: opacity 500ms;
-        margin-left: -16px;
+        transform: scale(0);
+        transition: all 500ms ease-out;
+        transform-origin: bottom;
+        margin-left: -15.83px;
+        margin-bottom: -0.2px;
     }
     &:hover::after {
         opacity: 1;
+        transform: scale(1);
     }
 }
