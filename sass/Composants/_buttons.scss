@@ -9,6 +9,12 @@
     font-size: large;
     margin: 40px auto 40px;
     cursor: pointer;
+    transition: all 500ms;
+    &:hover {
+        background: linear-gradient(175deg, #ff79d9d2, #9256dcd9);
+        box-shadow: 0px 3px 14px rgb(125, 125, 125);
+        transition: all 500ms;
+    }
 }
 
 .button__home {
