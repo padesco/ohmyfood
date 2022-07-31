@@ -3,17 +3,21 @@
     width: fit-content;
     border-radius: 30px;
     background: linear-gradient(175deg, $color-secondary, $color-primary);
-    color: #f2f2f2;
+    color: white;
     border: none;
-    box-shadow: 0px 3px 10px rgb(140, 140, 140);
+    @include box-shadow;
     font-size: large;
     margin: 40px auto 40px;
     cursor: pointer;
-    transition: all 500ms;
-    &:hover {
-        background: linear-gradient(175deg, #ff79d9d2, #9256dcd9);
-        box-shadow: 0px 3px 14px rgb(125, 125, 125);
-        transition: all 500ms;
+    &::after {
+        content: "";
+        background: linear-gradient(175deg, lighten($color-secondary, 5%), lighten($color-primary, 5%));
+        box-shadow: 0px 3px 12px darken(rgb(175, 175, 175), 10%);
+        opacity: 0;
+        transition: opacity 500ms;
+    }
+    &:hover::after {
+        opacity: 1;
     }
 }
 
