@@ -13,7 +13,7 @@ main {
     border-top-right-radius: 30px;
     padding: 30px 0 60px;
     margin-top: -60px;
-    background: whitesmoke;
+    background: $bg-lightgrey;
     position: relative;
     width: 100%;
     &__restaurantName {
@@ -21,6 +21,11 @@ main {
         align-items: center;
         justify-content: space-between;
         padding: 0 35px 40px 22px;
+        & i {
+            display: flex;
+            justify-content: center;
+            align-items: center; 
+        }
     }
     &__desktopVersion {
         @include desktop {
@@ -38,7 +43,7 @@ main {
             width: 33%;
         }
         & h2 {
-            border-bottom: 3px solid lightseagreen;
+            border-bottom: 3px solid $color-tertiary;
             width: 42px;
             margin: 0 22px 15px 20px;
         }
@@ -67,49 +72,79 @@ main {
 .menuElement {
     display: flex;
     cursor: pointer;
-    box-shadow: 0 0 10px #afafaf;
+    @include box-shadow;
     border-radius: 15px;
     overflow: hidden;
     background: white;
     width: 100%;
-    height: 60px;
+    position: relative;
     &__description {
         width: 100%;
         padding: 10px;
-        white-space: nowrap;
         overflow: hidden;
-        text-overflow: ellipsis;
-        border: 1px solid black;
+        white-space: nowrap;
+        transition-duration: 500ms;
+        & p, & h3 {
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
     }
     &__price {
         display: flex;
         justify-content: flex-end;
         align-items: flex-end;
         padding: 10px;
+        margin-inline-end: 20px;
+        background: white;
+        transform: translateX(0);
+        transition-duration: 500ms;
     }
     &__check {
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 70px;
+        width: 120px;
+        margin-right: -110px;
         background: $color-tertiary;
         color: white;
-        zoom: 150%;
-        transform: translateX(60px);
-        transition: transform 500ms;
+        font-size: xx-large;
+        opacity: 1;
+        transform: translateX(0);
+        transition-duration: 500ms;
         & .fa-circle-check {
-            transform: rotate(-180deg);
+            transform: rotate(-360deg);
             transition: transform 500ms;
         }
     }
 }
 .menuElement:hover {
+    & .menuElement__description {
+        text-overflow: ellipsis;
+        overflow: hidden;
+        margin-right: 108px;
+        transition-duration: 500ms;
+    }
     & > .menuElement__price {
+        transform: translateX(-108px);
+        animation-duration: 500ms;
     }
     & > .menuElement__check {
-        transform: translateX(0);
+        opacity: 1;
+        transform: translateX(-108px);
+        animation-duration: 500ms;
         & .fa-circle-check {
             transform: rotate(0deg);
         }
     }
+}
+
+/* animation apparition progressive */
+.menuElement:nth-child(1) {
+    animation: menu-appear 1000ms;
+}
+.menuElement:nth-child(2) {
+    animation: menu-appear 1000ms 100ms;
+}
+.menuElement:nth-child(3) {
+    animation: menu-appear 1000ms 200ms;
 }

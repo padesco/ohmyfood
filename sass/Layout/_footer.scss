@@ -24,8 +24,13 @@ footer {
     }
 }
 .fa-utensils {
-    zoom: 90%;
+    font-size: small;
 }
 .fa-handshake-angle {
-    zoom: 70%;
+    font-size: x-small;
+}
+.footer__list__element:nth-child(2) {
+    & a {
+        margin-left: -1px;
+    }
 }
