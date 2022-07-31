@@ -83,7 +83,6 @@ main {
         padding: 10px;
         overflow: hidden;
         white-space: nowrap;
-        margin-right: 0;
         transition-duration: 500ms;
         & p, & h3 {
             text-overflow: ellipsis;
@@ -104,12 +103,12 @@ main {
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 60px;
-        margin-right: -55px;
+        width: 120px;
+        margin-right: -110px;
         background: $color-tertiary;
         color: white;
-        zoom: 180%;
-        opacity: 0;
+        font-size: xx-large;
+        opacity: 1;
         transform: translateX(0);
         transition-duration: 500ms;
         & .fa-circle-check {
@@ -122,16 +121,16 @@ main {
     & .menuElement__description {
         text-overflow: ellipsis;
         overflow: hidden;
-        margin-right: 74px;
+        margin-right: 108px;
         transition-duration: 500ms;
     }
     & > .menuElement__price {
-        transform: translateX(-80px);
+        transform: translateX(-108px);
         animation-duration: 500ms;
     }
     & > .menuElement__check {
         opacity: 1;
-        transform: translateX(-54px);
+        transform: translateX(-108px);
         animation-duration: 500ms;
         & .fa-circle-check {
             transform: rotate(0deg);
