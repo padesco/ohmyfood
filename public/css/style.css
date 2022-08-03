@@ -547,6 +547,7 @@ main img {
   background: white;
   transform: translateX(0);
   transition-duration: 500ms;
+  font-weight: 600;
 }
 .menuElement__check {
   display: flex;
