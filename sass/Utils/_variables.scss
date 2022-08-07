@@ -12,3 +12,13 @@ $breakpoints: (
 .hidden {
     display: none;
 }
+
+%flex-between {
+    display: flex;
+    justify-content: space-between
+}
+%flex-center-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

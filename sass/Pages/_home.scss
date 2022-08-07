@@ -7,17 +7,14 @@
     height: auto;
     &__localisation {
         display: flex;
+        justify-content: center;
         width: 100%;
         padding: 20px 0;
-        justify-content: center;
         background: $bg-grey;
         & i {
-            font-size: large;
             margin-right: 5px;
         }
         & input {
-            font-size: large;
-            font-weight: 600;
             background: $bg-grey;
             text-align: center;
             width: 160px;
@@ -49,9 +46,8 @@
         margin-bottom: 20px;
     }
     &__container {
-        display: flex;
+        @extend %flex-between;
         flex-direction: column;
-        justify-content: space-between;
         width: 100%;
         height: 260px;
         @include tablette-desktop {
@@ -72,9 +68,7 @@
                 width: 30%;
             }
             & p:first-child {
-                display: flex;
-                justify-content: center;
-                align-items: center;
+                @extend %flex-center-center;
                 position: absolute;
                 border-radius: 50%;
                 width: 30px;
@@ -89,7 +83,6 @@
                 position: absolute;
             }
             & p:last-child {
-                font-weight: 700;
                 padding-right: 15px;
                 margin-left: 80px;
             }
@@ -108,9 +101,8 @@
     height: auto;
     background: $bg-lightgrey;
     &__container {
-        display: flex;
+        @extend %flex-between;
         flex-direction: column;
-        justify-content: space-between;
         height: 1040px;
         padding: 20px 0;
         @include tablette-desktop {
@@ -164,13 +156,10 @@
 }
 
 .element__title {
-    display: flex;
+    @extend %flex-between;
     align-items: center;
-    justify-content: space-between;
     padding: 10px 15px;
     & i {
-        display: flex;
-        justify-content: center;
-        align-items: center; 
+        @extend %flex-center-center; 
     }
 }

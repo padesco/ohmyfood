@@ -2,9 +2,29 @@
     font-family: 'Roboto', sans-serif;
 }
 
+/*Header*/
+.fa-arrow-left {
+    font-size: x-large;
+}
+
+/*Accueil*/
 .main__explore__title h1 {
     font-weight: 900;
 }
+.main__localisation {
+    & i {
+        font-size: large;
+    }
+    & input {
+        font-size: large;
+        font-weight: 600;
+    }
+}
+.instructions__container__element p:last-child {
+    font-weight: 700;
+}
+
+/*Pages Menu*/
 .menu__restaurantName h1 {
     font-family: 'Shrikhand', sans-serif;
     font-size: xx-large;
@@ -13,6 +33,19 @@
     font-weight: 400;
     font-size: large;
 }
+.menuElement__check {
+    font-size: xx-large;
+}
+
+/*button*/
 .button {
     font-size: large;
+}
+
+/*Footer*/
+.fa-utensils {
+    font-size: small;
+}
+.fa-handshake-angle {
+    font-size: x-small;
 }
