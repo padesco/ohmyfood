@@ -1,0 +1,27 @@
+/* loading spinner */
+header, .main, .restaurants, .instructions, footer, .shadow-bar {
+    animation: opacity 3s;
+}
+.loading-spinner {
+    position: fixed;
+    font-size: 15vw;
+    top: 40%;
+    left: 43%;
+    @include desktop {
+        font-size: 10vw;
+        top: 40%;
+        left: 45%;
+    }
+    & i {
+        opacity: 0;
+        background: linear-gradient(175deg, $color-primary, $color-secondary);
+        content: "\f004";
+        font-family: FontAwesome;
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        -moz-background-clip: text;
+        -moz-text-fill-color: transparent;
+        animation: loading-spinner 3s 1 cubic-bezier(0.215, 0.61, 0.355, 1);
+    }
+}

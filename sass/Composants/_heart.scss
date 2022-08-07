@@ -1,0 +1,26 @@
+/*animation des coeurs*/
+.fa-heart-restaurants {
+    font-size: xx-large;
+    display: block;
+    text-align: center;
+    cursor: pointer;
+    &::after {
+        background: linear-gradient(175deg, $color-primary, $color-secondary);
+        content: "\f004";
+        font-family: FontAwesome;
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        -moz-background-clip: text;
+        -moz-text-fill-color: transparent;
+        opacity: 0;
+        transform: scale(0);
+        transition: all 500ms ease-out;
+        transform-origin: bottom;
+        margin-left: -32px;
+    }
+    &:hover::after {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
