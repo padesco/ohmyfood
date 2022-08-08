@@ -5,11 +5,11 @@
     }
     10% {
         transform: translateY(13px);
-        opacity: 0.1;
+        opacity: 0;
     }
     22% {
         transform: translateY(10px);
-        opacity: 0.4;
+        opacity: 0.2;
     }
     85%,100% {
         opacity: 1;
@@ -44,8 +44,8 @@
       transform: scale(0.25);
       opacity: 0.1;
     }
-  }
-  @keyframes opacity {
+}
+@keyframes opacity {
     0% {
         opacity: 0;
     }
@@ -64,4 +64,4 @@
     100% {
         opacity: 1;
     }
-  }
+}
