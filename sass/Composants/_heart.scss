@@ -4,10 +4,14 @@
     display: block;
     text-align: center;
     cursor: pointer;
+    visibility: visible;
+    transition: visibility 500ms ease-out;
+    transform-origin: top;
     &::after {
         background: linear-gradient(175deg, $color-primary, $color-secondary);
         content: "\f004";
         font-family: FontAwesome;
+        padding: 1px;
         background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
@@ -17,10 +21,14 @@
         transform: scale(0);
         transition: all 500ms ease-out;
         transform-origin: bottom;
-        margin-left: -32px;
+        margin-left: -33px;
     }
     &:hover::after {
         opacity: 1;
         transform: scale(1);
+        visibility: visible;
+    }
+    &:hover {
+        visibility: hidden;
     }
 }
