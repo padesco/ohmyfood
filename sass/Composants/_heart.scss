@@ -1,5 +1,6 @@
 /*animation des coeurs*/
 .fa-heart-restaurants {
+    position: relative;
     font-size: xx-large;
     display: block;
     text-align: center;
@@ -7,6 +8,8 @@
     visibility: visible;
     transition: visibility 500ms ease-out;
     transform-origin: top;
+    padding: 1px;
+    margin-bottom: -1px;
     &::after {
         background: linear-gradient(175deg, $color-primary, $color-secondary);
         content: "\f004";
@@ -21,7 +24,11 @@
         transform: scale(0);
         transition: all 500ms ease-out;
         transform-origin: bottom;
-        margin-left: -33px;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
     }
     &:hover::after {
         opacity: 1;
